@@ -1,0 +1,47 @@
+/* Custom styles for Bootstrap integration */
+
+/* Hero section gradient background */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 60vh;
+}
+
+/* Custom navbar styling */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Card hover effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* Form styling enhancements */
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Button hover effects */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Custom spacing */
+.min-vh-50 {
+    min-height: 50vh;
+}
+
+/* Icon styling */
+.bi {
+    vertical-align: -0.125em;
+}

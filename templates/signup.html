@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up - Bloginator{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <i class="bi bi-person-plus-fill text-primary display-4"></i>
+                        <h2 class="fw-bold mt-3">Create Account</h2>
+                        <p class="text-muted">Join Bloginator and start your blogging journey</p>
+                    </div>
+                    
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                <i class="bi bi-envelope me-2"></i>Email Address
+                            </label>
+                            <input type="email" class="form-control form-control-lg" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="password" class="form-label">
+                                <i class="bi bi-lock me-2"></i>Password
+                            </label>
+                            <input type="password" class="form-control form-control-lg" id="password" name="password" required minlength="6">
+                            <div class="form-text">Password must be at least 6 characters long</div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
+                            <i class="bi bi-person-plus me-2"></i>Create Account
+                        </button>
+                    </form>
+                    
+                    <div class="text-center">
+                        <p class="mb-2">
+                            Already have an account? 
+                            <a href="#" class="text-decoration-none">Sign in</a>
+                        </p>
+                        <p class="mb-0">
+                            <a href="{{ url_for('pages.home') }}" class="text-decoration-none">
+                                <i class="bi bi-arrow-left me-1"></i>Back to Home
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

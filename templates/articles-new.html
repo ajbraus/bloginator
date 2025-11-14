@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up - Bloginator{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 offset-lg-3">
+
+			<form class="mt-5" action="/articles" method="POST">
+				{{ form.csrf_token }}
+				<div class="mb-3">
+					{{ form.title.label(class_="form-label") }} {{ form.title(size=20, class_="form-control") }}	
+					{% if form.title.errors %}
+					    <ul class="errors">
+					    {% for error in form.title.errors %}
+					        <li>{{ error }}</li>
+					    {% endfor %}
+					    </ul>
+					{% endif %}
+				</div>
+				<div class="mb-3">
+					{{ form.body.label(class_="form-label") }} {{ form.body(size=50, class_="form-control") }}
+					{% if form.body.errors %}
+					    <ul class="errors">
+					    {% for error in form.body.errors %}
+					        <li>{{ error }}</li>
+					    {% endfor %}
+					    </ul>
+					{% endif %}
+				</div>
+				<input type="submit" value="Go">
+			</form>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+				<!-- <div class="mb-3">
+					<label for="title">Title</label>
+					<input type="text" name="title" class="form-control"/>	
+				</div>
+				<div class="mb-3">
+					<textarea name="body" id="" class="form-control" rows="8"></textarea>
+				</div>
+				<div class="text-end">
+					<button class="btn btn-primary">Save</button>
+				</div> -->
