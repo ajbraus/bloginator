@@ -67,19 +67,16 @@ def test_login(client):
         # user = User.query.filter_by(email=fake_email).first()
         # assert user is not None
 
+        assert 'Set-Cookie' in response.headers
+        assert 'session' in response.headers['Set-Cookie']
+
         # CHECK THAT IT IS A REDIRECT
         assert response.status_code == 302
         # Check that the second request was to the index page.
         assert response.location == '/articles'
 
-# def test_logout(client)
 
-
-
-# Regression tests
-
-
-
+# def test_logout(client):
 
 
 
