@@ -1,0 +1,52 @@
+
+AI Mode
+All
+Videos
+Shopping
+Images
+Short videos
+Forums
+More
+Tools
+AI Overview
+A typical
+.gitignore file for a Flask project is primarily a standard Python .gitignore file with a few common additions specific to the Flask project structure, such as the instance folder. 
+You can create a .gitignore file manually in your project's root directory and add the following patterns: 
+
+# Python
+# Byte-code files
+*.pyc
+__pycache__/
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Flask instance folder (contains config and database)
+instance/
+
+# IDE files (example for VS Code)
+.vscode/
+
+# Editor backup files
+*.swp
+*~
+
+# Misc
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# specific to pipenv, if used (uncomment to ignore)
+# Pipfile.lock 
+
+# specific to poetry, if used (uncomment to ignore)
+# poetry.lock
+
+# specific to pdm, if used
+.pdm.toml
+__pypackages__/
