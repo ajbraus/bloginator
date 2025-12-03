@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager
 
 from models.user import db, User
+# from models.article import db, Article
 
 from blueprints.pages import pages
 from blueprints.auth import auth

@@ -38,9 +38,10 @@ def index():
 @articles.route('/articles/<int:id>', methods=['GET'])
 @login_required
 def show(id):
-    print(f'show article {id}')
-    # fetch article by id from DB
-    return render_template('articles-show.html', id=id)
+    from app import Article
+    a = Article.get_id(1)
+    
+    return render_template('articles-show.html', a=a)
 
 @articles.route('/articles/new', methods=['GET'])
 @login_required
