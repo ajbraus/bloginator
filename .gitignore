@@ -50,3 +50,6 @@ build/
 # specific to pdm, if used
 .pdm.toml
 __pypackages__/
+
+.env
+.flaskenv

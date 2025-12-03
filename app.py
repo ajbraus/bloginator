@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager
 
@@ -10,10 +11,10 @@ from blueprints.articles import articles
 
 # APP
 app = Flask(__name__)
-app.secret_key = 'your-secret-key-change-this-in-production'
+app.secret_key = os.environ.get("SECRET_KEY")
 
 # INIT DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bloginator.db'  # or PostgreSQL/MySQL
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
