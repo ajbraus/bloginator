@@ -2,8 +2,9 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager
 
-from models.user import db, User
-# from models.article import db, Article
+from models import db, bcrypt
+from models.user import User
+from models.article import Article
 
 from blueprints.pages import pages
 from blueprints.auth import auth
@@ -17,6 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
+bcrypt.init_app(app)
 
 # FLASK-LOGIN
 login_manager = LoginManager()
@@ -34,7 +36,6 @@ def load_user(user_id):
 app.register_blueprint(pages)
 app.register_blueprint(auth)
 app.register_blueprint(articles)
-
 
 # CREATE TABLES
 with app.app_context():
