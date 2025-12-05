@@ -19,16 +19,24 @@ def index():
 
     elif request.method == "POST":
         print('create')
+        title = request.form['title']
+        body = request.form['body']
+
         # instantiate new article
+        article = Article(title=title, body=body) 
+
         # save new article
-        # url_for('articles.show', id=article.id)
+        db.session.add(article)
+        db.session.commit()
+        
+        return redirect(url_for('articles.show', id=article.id))
 
 @articles.route('/articles/<int:id>', methods=['GET'])
 @login_required
 def show(id):
-    a = Article.get_id(1)
+    article = Article.query.get(id)
     
-    return render_template('articles-show.html', a=a)
+    return render_template('articles-show.html', article=article)
 
 @articles.route('/articles/new', methods=['GET'])
 @login_required

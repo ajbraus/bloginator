@@ -34,7 +34,11 @@
                 </ul>
                 <ul class="navbar-nav">
                     {% if current_user.is_authenticated %}
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('articles.index') }}">
+                                <i class="bi bi-house me-1"></i>Articles
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('articles.new') }}">
                                 <i class="bi bi-person-plus me-1"></i>New Post

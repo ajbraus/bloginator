@@ -10,28 +10,14 @@
 		<div class="col-lg-6 offset-lg-3">
 
 			<form class="mt-5" action="/articles" method="POST">
-				{{ form.csrf_token }}
 				<div class="mb-3">
-					{{ form.title.label(class_="form-label") }} {{ form.title(size=20, class_="form-control") }}	
-					{% if form.title.errors %}
-					    <ul class="errors">
-					    {% for error in form.title.errors %}
-					        <li>{{ error }}</li>
-					    {% endfor %}
-					    </ul>
-					{% endif %}
+					<label for="title" class="form-label">Title</label>
+					<input name="title" class="form-control" placeholder="Title" required/>
 				</div>
 				<div class="mb-3">
-					{{ form.body.label(class_="form-label") }} {{ form.body(size=50, class_="form-control") }}
-					{% if form.body.errors %}
-					    <ul class="errors">
-					    {% for error in form.body.errors %}
-					        <li>{{ error }}</li>
-					    {% endfor %}
-					    </ul>
-					{% endif %}
+					<textarea name="body" class="form-control" required rows="20"></textarea>
 				</div>
-				<input type="submit" value="Go">
+				<input type="submit" value="Save">
 			</form>
 
 		</div>

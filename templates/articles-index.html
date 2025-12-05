@@ -9,7 +9,10 @@
 	<div class="row">
 		<div class="col-lg-6 offset-lg-3">
 			<h2>Articles#index</h2>
-			{{current_user.email}}
+			{% for a in articles %}
+			  <h3>{{ a.title }}</h3>
+			  <div>{{ a.body }}</div>
+			{% endfor %}
 		</div>
 	</div>
 </div>
