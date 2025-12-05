@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_migrate import Migrate
 from flask_login import LoginManager
 
 from models import db, bcrypt
@@ -18,6 +19,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
+migrate = Migrate(app, db)
+
 bcrypt.init_app(app)
 
 # FLASK-LOGIN
