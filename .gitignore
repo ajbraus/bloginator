@@ -22,6 +22,7 @@ __pycache__/
 .venv/
 env/
 venv/
+myenv/
 ENV/
 
 # Flask instance folder (contains config and database)
@@ -53,3 +54,4 @@ __pypackages__/
 
 .env
 .flaskenv
+
